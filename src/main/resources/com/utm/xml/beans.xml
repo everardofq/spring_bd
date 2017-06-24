@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+
+<!-- 	Tag que reconoce todas las notaciones spring de la ruta indicada en base-package -->
+	<context:component-scan base-package="com.utm"></context:component-scan>
+
+<!-- 	Tag que ayuda reconocer nuestro archivo.properties -->
+	<context:property-placeholder location="classpath:connection.properties" />		
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${driver}" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" /> 
+	</bean>
+	
+<!-- 	Declarar una marca -->
+<!-- 	<bean id="marca2" class="com.utm.beans.Marca"> -->
+<!-- 		<property name="id" value="2"></property> -->
+<!-- 		<property name="nombre" value="Nike"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="camiseta" class="com.utm.beans.Camiseta"> -->
+<!-- 		<property name="id" value="2"></property> -->
+<!-- 		<property name="numero" value="7"></property> -->
+<!-- 		<property name="marca" ref="marca2"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="equipo" class="com.utm.beans.Equipo"> -->
+<!-- 		<property name="id" value=1></property> -->
+<!-- 		<property name="nombre" value="Barcelona"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="jugador" class="com.utm.beans.Jugador"> -->
+<!-- 		<property name="id" value="2"></property> -->
+<!-- 		<property name="nombre" value="Juan Cuadrado"></property> -->
+<!-- 	</bean> -->
+
+</beans>
